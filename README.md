@@ -78,6 +78,9 @@ npm run dev
 
 Visit `http://localhost:5173` to launch KYSAI.
 
+### 4. Production Deployment
+See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step instructions to deploy on Vercel and Render.
+
 ---
 
 ## 🤝 Feedback & Contribution

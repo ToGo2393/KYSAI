@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: kysai-backend
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: |
+      cd backend
+      pip install -r requirements.txt
+    startCommand: |
+      cd backend
+      gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+    disk:
+      name: kysai-data
+      mountPath: /data
+      sizeGB: 1
